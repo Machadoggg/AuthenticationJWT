@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AuthenticationJWT.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthenticationJWT.Controllers
@@ -7,5 +7,11 @@ namespace AuthenticationJWT.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly JwtService _jwtService;
+
+        public AuthController(JwtService jwtService)
+        {
+            _jwtService = jwtService;
+        }
     }
 }
